@@ -1,6 +1,8 @@
 # GMLIB-Plugin-Template——玩家nbt数据备份
 Template for plugins using GMLIB
 
+测试环境：Version: 1.20.62.02(ProtocolVersion 649) with LeviLamina-0.9.0+dc310d1e7
+[GMLIB] Version: 0.9.1
 
 本示例同时使用了ll与gmlib的api。
 
