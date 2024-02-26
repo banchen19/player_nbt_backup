@@ -73,12 +73,12 @@ void read_fileto_playernbt(mce::UUID uuid) {
 void player_nbt_write_to_file(Player* player) {
     auto& logger = getSelfPluginInstance().getLogger();
     if (player) {
-        auto player_nbt = CompoundTag{};
+        auto player_nbt =CompoundTag{};
         const auto   uuid       = player->getUuid();
-        player->save(*player_nbt);
-        if (player_nbt.isEmpty()) {    
+        player->save(player_nbt);
+        if (!player_nbt.isEmpty()) {    
             string     player_path = create_path_str(uuid);
-            const auto nbt_string  = player_nbt->toSnbt();
+            const auto nbt_string  = player_nbt.toSnbt();
             ofstream   outfile(player_path);
             outfile << nbt_string;
             outfile.close();
